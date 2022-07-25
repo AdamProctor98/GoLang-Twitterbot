@@ -13,7 +13,7 @@ func SearchTweets(query string, nextToken string) ([]*models.SearchResponse, err
 		return nil, errors.New("Invalid Request. Bearer Token is not set")
 	}
 
-	url := "https://api.twitter.com/2/tweets/search/recent?query=bet365&max_results=100"
+	url := "https://api.twitter.com/2/tweets/search/recent?query=" + query + "&max_results=100"
 
 	if nextToken != "" {
 		url = url + "&next_token=" + nextToken
